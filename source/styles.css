@@ -1,0 +1,146 @@
+@font-face {
+  font-family: Satoshi;
+  src: url(./fonts/Satoshi-Variable.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+*::selection {
+  background: #2f2f2f25;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  --bg: #f5f1e9;
+  --fg: #2f2f2f;
+}
+
+html.dark {
+  --bg: #2f2f2f;
+  --fg: #f5f1e9;
+}
+
+body {
+  background: var(--bg);
+}
+
+.landing {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  gap: 0;
+  
+  height: 100dvh;
+}
+
+.landing .detail {
+  position: absolute;
+  bottom: 0; right: 0;
+  
+  z-index: -1;
+}
+
+.landing .name {
+  grid-column: 2/9;
+  grid-row: 2;
+  
+  font-family: 'Satoshi';
+  font-size: 6em;
+  font-weight: 800;
+  color: var(--fg);
+  
+  height: 100%;
+}
+
+.landing .quick-intro {
+  grid-column: 2/9;
+  grid-row: 4;
+  
+  font-family: 'Satoshi';
+  font-size: 2em;
+  font-weight: 400;
+  color: var(--fg);
+  max-width: 800px;
+}
+
+.landing .actions {
+  grid-column: 2/12;
+  grid-row: 7;
+  
+  display: flex;
+  align-items: normal;
+  justify-content: start;
+}
+
+.landing .actions .action {  
+  position: relative;
+  
+  font-family: 'Satoshi';
+  font-size: 1.5em;
+  font-weight: 400;
+  color: var(--fg);
+  
+  padding: 0 64px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  
+  background: var(--bg);
+  border: 1px solid var(--fg);
+  
+  height: 100%;
+  
+  overflow: hidden;  
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+.landing .actions .action:hover {
+  color: var(--bg);
+}
+
+.landing .actions .action.cta {
+  background: var(--fg);
+  border-right: none;
+  color: var(--bg);
+}
+
+.landing .actions .action.cta:hover {
+  color: var(--fg);
+}
+
+.landing .actions .action::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: calc(100% + 20px); height: 100%;
+  background: var(--fg);
+  
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 97% 87%, 100% 75%, 97% 63%, 100% 50%, 97% 38%, 100% 25%, 97% 12%, 100% 0);
+  
+  transition: all 0.2s ease-in-out;
+  transform: translateX(-100%);
+}
+
+.landing .actions .action:hover::after {
+  width: calc(100% + 20px);
+  transform: translateX(0);
+}
+
+.landing .actions .action.cta::after {
+  background: var(--bg);
+}
+
+.landing .actions .action p,
+.landing .actions .action span {
+  z-index: 1;
+}
