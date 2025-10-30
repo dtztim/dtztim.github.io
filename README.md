@@ -1,4 +1,4 @@
-# dtztim/website
+# [dtztim.github.io](https://dtztim.github.io)
 
 A bigger readme.md. Yeah I know I tend to simplify most thing... but you know, simpler is better... or maybe not...
 
