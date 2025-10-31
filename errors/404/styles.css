@@ -1,6 +1,6 @@
 @font-face {
   font-family: Satoshi;
-  src: url(./fonts/Satoshi-Variable.ttf);
+  src: url(./../../fonts/Satoshi-Variable.ttf);
 }
 
 * {
@@ -119,7 +119,6 @@ body {
 
 .landing .actions .action.cta {
   background: var(--fg);
-  border-right: none;
   color: var(--bg);
 }
 
@@ -176,28 +175,9 @@ body {
   height: 64px;
 }
 
-.footer .split {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  
+.footer p {
   font-family: 'Satoshi';
   font-size: 1em;
   font-weight: 400;
-}
-
-.footer p {
-  color: var(--fg);
-}
-
-.footer .socials {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  gap: 12px;
-}
-
-.footer .socials a {
   color: var(--fg);
 }
