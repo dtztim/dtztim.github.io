@@ -22,7 +22,7 @@
                 deleted from here. Make sure to check the URL.
             </p>
             <div class="actions">
-                <a href="../../index.html" class="cta action">
+                <a href="../../" class="cta action">
                     <span class="material-symbols-outlined">arrow_back</span>
                     <p>Go back</p>
                 </a>
@@ -30,7 +30,10 @@
         </section>
         <footer class="footer">
             <img src="./../../assets/dtztim.png" alt="dtztim logo" draggable="false">
-            <p>© 2025 Timothy Deletrez. All rights reserved.</p>
+            <p>© <span id="copyrightYear"></span> Timothy Deletrez, All rights reserved.</p>
         </footer>
     </body>
+    <script>
+        document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+    </script>
 </html>

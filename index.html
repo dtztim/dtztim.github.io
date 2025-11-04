@@ -3,28 +3,54 @@
     <head>
         <title>˗ˏˋ Timothy ˎˊ ⋅ Meow 😻</title>
         
-        <meta name="description" content="Hello! I'm Timothy, here's my personal website and portfolio where you can find my showcased projects. Do not esitate to react to my projects, learning is by doing mistakes!"">
+        <meta name="description" content="Hello! I'm Timothy, here's my personal website and portfolio where you can find my showcased projects. Do not hesitate to react to my projects, learning is by doing mistakes!">
         <meta name="keywords" content="Timothy Deletrez dtztim timdel deltim">
         
         <link rel="stylesheet" href="styles.css">
-        <link rel="shortcut icon favicon" href="assets/dtztim.png" type="image/x-icon">
+        <link rel="shortcut icon" href="assets/dtztim.png" type="image/x-icon">
         
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=all" />
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </head>
     <body>
+        <header class="header" id="header">
+            <div class="left">
+                <img src="assets/dtztim.png" alt="dtztim logo">
+            </div>
+            <div class="right">
+                <button class="langButton" id="langButton">
+                    <span class="langText" id="langText">
+                        English
+                    </span>
+                    <span class="material-symbols-outlined">
+                        keyboard_arrow_down
+                    </span>
+                </button>
+            </div>
+        </header>
+        <div class="langSelector" id="langSelector">
+            <a class="option" href="./">
+                <span>English</span>
+            </a>
+            <a class="option" href="./errors/404/">
+                <span>Français</span>
+            </a>
+            <a class="option" href="./errors/404/">
+                <span>Deutsch</span>
+            </a>
+        </div>
+        
         <section class="landing">
-            <svg class="detail" width="924" height="1080" viewBox="0 0 924 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="detail animateOnLoad" width="924" height="1080" viewBox="0 0 924 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M633.263 -180.871C522.317 -155.695 313.172 -40.1786 364.164 220.482C415.155 481.142 409.504 614.972 209.823 697.092C10.1406 779.211 -16.8068 866.962 11.3701 1081.98M661.029 -132.779C603.075 -88.2639 499.658 45.1857 549.615 222.863C612.061 444.959 650.546 646.617 508.262 777.409C365.979 908.201 180.266 833.557 149.679 992.176C125.21 1119.07 123.007 1220.77 124.964 1255.75M977.66 196C902.826 201.064 644.306 296.107 697.022 602.648C749.738 909.188 535.344 996.337 421.558 1001.59C346.145 1010.12 187.903 1084.42 158.235 1313.38M596.569 -128.992C512.909 -73.9145 395.803 78.7299 452.047 296.667C544.205 653.76 486.917 746.856 268.406 798.561C157.192 824.876 17.1058 890 49.9839 1148.86M855.63 -75.5C852.569 -68.0853 588.789 157.859 642.408 569.642C696.026 981.425 378.25 926.582 378.25 926.582C378.25 926.582 176.16 887 142.83 1286.7" stroke="#E4E1D8" stroke-width="2"/>
             </svg>
-            <h1 class="name">Timothy Deletrez</h1>
-            <p class="quick-intro">
-                I’m a self-taught developer dreaming about 
-                becoming a web designer based in Liege, Belgium.
+            <h1 class="name animateOnLoad">Timothy Deletrez</h1>
+            <p class="quick-intro animateOnLoad">
+                I'm a self-taught developer from Liege, Belgium. I love to play with electronics and explore UX design.
             </p>       
-            <div class="actions">
+            <div class="actions animateOnLoad">
                 <a href="https://github.com/dtztim?tab=repositories" class="cta action">
                     <span class="material-symbols-outlined">explore</span>
                     <p>Discover my work</p>
@@ -38,13 +64,16 @@
         <footer class="footer">
             <img src="./assets/dtztim.png" alt="dtztim logo" draggable="false">
             <div class="split">
-                <p>© 2025 Timothy Deletrez. All rights reserved.</p>
+                <p>© <span id="copyrightYear"></span> Timothy Deletrez, All rights reserved.</p>
                 <div class="socials">
                     <a href="https://github.com/dtztim">Github</a>
                 </div>
-                
             </div>
-            
         </footer>
+        <script>
+            document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+        </script>
+        <!-- JS Connexion -->
+        <script src="main.js"></script>
     </body>
 </html>

@@ -37,6 +37,149 @@ body {
 }
 
 /* ====================
+## Header Styles
+==================== */
+
+.header {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 96px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  padding-left: 64px;
+  
+  background: var(--bg);
+  border-bottom: solid 1px var(--border);
+  
+  transform: translateY(-100%);
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.header.opened {
+  transform: translateY(0);
+}
+
+.header .left {
+  height: 80%;
+}
+
+.header .left  img {
+  height: 100%;
+}
+
+.header .right {
+  position: relative;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  
+  height: 100%;
+  padding-right: 64px;
+}
+
+.header .right .langButton {
+  position: relative;
+  
+  font-family: 'Satoshi';
+  font-size: 1em;
+  font-weight: 400;
+  color: var(--fg);
+  
+  background: transparent;
+  border: none;
+  
+  height: 100%;
+  padding: 32px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  
+  border: solid 1px var(--border);
+  border-width: 0 1px 0 1px;
+  
+  overflow: hidden;  
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+.header .right .langButton:hover {
+  color: var(--bg);
+}
+
+.header .right .langButton span {
+  z-index: 1;
+}
+
+.header .right .langButton::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: calc(100% + 20px); height: calc(100% + 2px);
+  background: var(--fg);
+  
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 95% 87%, 100% 75%, 95% 63%, 100% 50%, 95% 38%, 100% 25%, 95% 12%, 100% 0);
+  
+  transition: all 0.2s ease-in-out;
+  transform: translateX(-100%);
+}
+
+.header .right .langButton:hover::after {
+  width: calc(100% + 20px);
+  transform: translateX(0);
+}
+
+.langSelector {
+  position: absolute;
+  top: 96px; right: 64px;
+  width: fit-content; height: fit-content;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  
+  background: var(--bg);
+  border: solid 1px var(--border);
+  border-top: none;
+  
+  z-index: 1;
+  
+  background: var(--border);
+  
+  transition: all 0.2s ease-in-out;
+  transform: translateY(calc(-100% - 96px));
+}
+
+.langSelector.opened {
+  transform: translateY(0);
+}
+
+.langSelector .option {
+  width: 180px;
+  padding: 16px 32px;
+  font-family: 'Satoshi';
+  font-size: 1em;
+  font-weight: 400;
+  
+  color: var(--fg);
+  background: var(--bg);
+}
+
+.langSelector .option:hover {
+  background: var(--border);
+  cursor: pointer;
+}
+
+/* ====================
 ## Landing Styles
 ==================== */
 
@@ -47,6 +190,8 @@ body {
   gap: 0;
   
   height: 100dvh;
+  
+  z-index: -2;
 }
 
 .landing .detail {
@@ -54,6 +199,18 @@ body {
   bottom: 0; right: 0;
   
   z-index: -1;
+  
+  transition: all 0.5s cubic-bezier(.25,1,1,1);
+  transition-delay: 500ms;
+  transform: translateX(120px);
+  opacity: 0;
+  filter: blur(12);
+}
+
+.landing .detail.animated {
+  transform: translateX(0);
+  opacity: 1;
+  filter: blur(0);
 }
 
 .landing .name {
@@ -66,6 +223,18 @@ body {
   color: var(--fg);
   
   height: 100%;
+  
+  transition: all 0.5s cubic-bezier(.25,1,1,1);
+  transition-delay: 300ms;
+  transform: translateY(80px);
+  opacity: 0;
+  filter: blur(12);
+}
+
+.landing .name.animated {
+  transform: translateY(0);
+  opacity: 1;
+  filter: blur(0);
 }
 
 .landing .quick-intro {
@@ -77,6 +246,18 @@ body {
   font-weight: 400;
   color: var(--fg);
   max-width: 800px;
+  
+  transition: all 0.5s cubic-bezier(.25,1,1,1);
+  transition-delay: 500ms;
+  transform: translateY(80px);
+  opacity: 0;
+  filter: blur(12);
+}
+
+.landing .quick-intro.animated {
+  transform: translateY(0);
+  opacity: 1;
+  filter: blur(0);
 }
 
 .landing .actions {
@@ -86,6 +267,18 @@ body {
   display: flex;
   align-items: normal;
   justify-content: start;
+  
+  transition: all 0.5s cubic-bezier(.25,1,1,1);
+  transition-delay: 700ms;
+  transform: translateY(80px);
+  opacity: 0;
+  filter: blur(12);
+}
+
+.landing .actions.animated {
+  transform: translateY(0);
+  opacity: 1;
+  filter: blur(0);
 }
 
 .landing .actions .action {  
