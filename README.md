@@ -9,5 +9,5 @@ A huge thanks to all the (future) contributors that helped me on this project th
 
 ## Attributions
 
-- All icons used on this project come from the Google Icons library. [Explore ↗](https://fonts.google.com/icons)<br>
-- The font used on my website is Satoshi, a font made by the Indian Type Foundry with Free Font Licence [Explore ↗](https://www.fontshare.com/fonts/satoshi)
+- Icons from Google [Open ↗](https://fonts.google.com/icons)<br>
+- Typeface (Satoshi) from Indian Type Foundry [Open ↗](https://www.fontshare.com/fonts/satoshi)
