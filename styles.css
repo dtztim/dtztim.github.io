@@ -245,7 +245,7 @@ body {
   font-size: 2em;
   font-weight: 400;
   color: var(--fg);
-  max-width: 800px;
+  max-width: 850px;
   
   transition: all 0.5s cubic-bezier(.25,1,1,1);
   transition-delay: 500ms;
